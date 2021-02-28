@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Quote;
 
 class QuoteController extends Controller
 {
@@ -13,7 +14,8 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        //
+        return Quote::orderBy('created_at', 'DESC')->get();
+        //Returns all items, a normal index action 
     }
 
     /**
