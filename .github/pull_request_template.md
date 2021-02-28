@@ -1,4 +1,4 @@
-## [PT board URL]( link )
+## [No Board]
 
 ## Changes proposed in this pull request:
 * 
@@ -8,5 +8,3 @@
 
 ## Packages/Gems added
 - 
-
-## Screenshots (Client)
