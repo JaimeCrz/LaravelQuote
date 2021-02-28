@@ -28,4 +28,4 @@ Route::prefix('/quote')->group( function () {
   }
 );
 
-// Delete/destroy method not gonna be use in this test =), Keeping it for future upgrades. 
+// Update/Delete/destroy method not gonna be use in this test =), Keeping it for future upgrades. 

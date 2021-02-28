@@ -75,7 +75,12 @@ class QuoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $exitingQuote = Quote::find($id);
+
+        // something happens here =) but not today!
+
+        return $exitingQuote;
+        // update action like on Rails
     }
 
     /**
@@ -86,6 +91,15 @@ class QuoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $excitingQuote = Quote::find($id);
+
+        if ($excitingQuote) {
+            $excitingQuote->delete();
+            return "Quote has been deleted.";
+        }
+
+        return "The quote you are trying to delete does not exist.";
+
+        //Destroying BOOM! =)
     }
 }
