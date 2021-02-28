@@ -36,7 +36,12 @@ class QuoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newQuote = new Quote;
+        $newQuote->sentence = $request->quote["sentence"];
+        $newQuote->save();
+
+        return $newQuote;
+        // Saves the new sentence. could also be created in create.
     }
 
     /**
