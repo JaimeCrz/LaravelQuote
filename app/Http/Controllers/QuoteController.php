@@ -14,6 +14,12 @@ class QuoteController extends Controller
      */
     public function index()
     {
+        $indexQuotes = Quote::orderBy('created_at', 'DESC')->get();
+
+        if ( count($indexQuotes) <= 0 ) {
+            return "No quotes has been created.";
+        }
+
         return Quote::orderBy('created_at', 'DESC')->get();
         //Returns all items, a normal index action 
     }
