@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+  return $request->user();
 });
+
+Route::get('/quotes', [QuoteController::class, 'index']);
+Route::prefix(('/quote')->group(function () {
+  Route::post('/store', [QuoteController::class, 'store']);
+  Route::put('/{id}', [QuoteController::class, 'update']);
+  Route::delete('/{id}', [QuoteController::class, 'destroy']);
+}));
+
+// Delete/destroy method not gonna be use in this test =), Keeping it for future upgrades. 
