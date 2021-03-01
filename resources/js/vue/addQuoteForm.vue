@@ -1,6 +1,6 @@
 <template>
-  <div>
-    Form
+  <div class="addQuote">
+    <input type="text" />
   </div>
 </template>
 
