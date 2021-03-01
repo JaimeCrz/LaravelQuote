@@ -12,8 +12,6 @@ services:
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=database"
-      - "host=localhost"
-
 
   # The Web Server
   web:
@@ -27,25 +25,6 @@ services:
       - app
     ports:
       - 8080:80
-
-  composer:
-    restart: 'no'
-    image: composer
-    command: install
-    volumes_from:
-      - app
-    working_dir: /var/www
-
-  # node:
-  #   image: "node:12.14"
-  #   working_dir: /var/www
-  #   environment:
-  #     - NODE_ENV=development
-  #   volumes:
-  #     - ./:/var/www
-  #   expose:
-  #     - "8080"
-  #   command: bash -c "npm install && npm run watch-poll"
 
   # The Database
   
