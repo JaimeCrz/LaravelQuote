@@ -1,4 +1,11 @@
-FROM php:7.4-fpm
+FROM php:7.4-apache
 
-RUN apt-get update && apt-get install -y default-mysql-client
-RUN docker-php-ext-install pdo pdo_mysql
+# PHP Extensions
+RUN docker-php-ext-install pdo_mysql
+
+# Composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php composer-setup.php
+RUN php -r "unlink('composer-setup.php');"
+RUN mv composer.phar /usr/local/bin/composer
+RUN chown www-data:www-data /var/www/

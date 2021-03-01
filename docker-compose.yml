@@ -47,6 +47,7 @@ services:
     command: bash -c "npm install && npm run watch-poll"
 
   # The Database
+  
   database:
     image: mysql:8.0
     volumes:
