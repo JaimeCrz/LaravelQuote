@@ -1,12 +1,20 @@
 <template>
-  <div>
+  <div class="quoteListContainer">
+    <div class="heading">
+      <h3 id="title"> Quotes coming soon</h3>
+      <addQuoteForm />
+    </div>
     Hello, hello!? Hello world!! =D
   </div>
 </template>
 
 <script>
-export default {
+import addQuoteForm from "./addQuoteForm"
 
+export default {
+  components: {
+    addQuoteForm
+  }
 }
 </script>
 
